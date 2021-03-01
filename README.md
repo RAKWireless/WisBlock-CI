@@ -1,4 +1,4 @@
-# Github Actions CI Arduino Init Script [![Build Status](https://travis-ci.com/adafruit/travis-ci-arduino.svg?branch=master)](https://travis-ci.com/adafruit/travis-ci-arduino)
+# Github Actions CI Arduino Init Script 
 
 The purpose of this repo is to execute an automated compilation test of all examples in the WisBlock repository. It uses Github Actions.    
 This repository is based on [ci-arduino](https://github.com/adafruit/ci-arduino) which was created by Adafruit. 
