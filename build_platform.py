@@ -33,6 +33,11 @@ if "RAK-nRF52-Arduino" in BUILD_DIR:
     print("Found nRF52 BSP")
     IS_NRF_BSP = True
 
+IS_ESP_BSP = False
+if "RAK-ESP32-Arduino" in BUILD_DIR:
+    print("Found ESP32 BSP")
+    IS_ESP_BSP = True
+
 #os.system('pwd')
 #os.system('ls -lA')
 
@@ -277,6 +282,8 @@ for platform in platforms:
     print('#'*80)
     if not IS_LEARNING_SYS:
         if IS_NRF_BSP:
+            test_examples_in_folder(BUILD_DIR+"/libraries/RAK_examples/examples")
+        else if IS_ESP_BSP:
             test_examples_in_folder(BUILD_DIR+"/libraries/RAK_examples/examples")
         else:
             test_examples_in_folder(BUILD_DIR+"/examples")
