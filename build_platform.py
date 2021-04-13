@@ -283,7 +283,7 @@ for platform in platforms:
     if not IS_LEARNING_SYS:
         if IS_NRF_BSP:
             test_examples_in_folder(BUILD_DIR+"/libraries/RAK_examples/examples")
-        else if IS_ESP_BSP:
+        elif IS_ESP_BSP:
             test_examples_in_folder(BUILD_DIR+"/libraries/RAK_examples/examples")
         else:
             test_examples_in_folder(BUILD_DIR+"/examples")
