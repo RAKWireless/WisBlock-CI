@@ -86,7 +86,7 @@ ALL_PLATFORMS={
     "nrf52832" : "adafruit:nrf52:feather52832:softdevice=s132v6,debug=l0",
     "nrf52840" : "adafruit:nrf52:feather52840:softdevice=s140v6,debug=l0",
     "rak4631" : "rakwireless:nrf52:WisCoreRAK4631Board:softdevice=s140v6,debug=l0",
-    "rak11200" : "rakwireless:esp32:WisCoreRAK11200Board:FlashFreq=80",
+    "rak11200" : "rakwireless:esp32:WisCore_RAK11200_Board:FlashFreq=80",
     "cpb" : "adafruit:nrf52:cplaynrf52840:softdevice=s140v6,debug=l0",
     "clue" : "adafruit:nrf52:cluenrf52840:softdevice=s140v6,debug=l0",
     # groupings
