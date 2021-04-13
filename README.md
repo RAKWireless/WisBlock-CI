@@ -54,7 +54,8 @@ ALL_PLATFORMS={
 ...
 }
 
-BSP_URLS = "https://downloads.rakwireless.com/Arduino/BSP/package_raknrf_index.json,https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json,https://sandeepmistry.github.io/arduino-nRF5/package_nRF5_boards_index.json"
+BSP_URLS = "https://raw.githubusercontent.com/RAKWireless/RAKwireless-Arduino-BSP-Index/main/package_rakwireless_index.json,https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json,https://sandeepmistry.github.io/arduino-nRF5/package_nRF5_boards_index.json"
+
 
 ```
 
@@ -68,7 +69,8 @@ export NRF5X_PLATFORMS='declare -A nrf5x_platforms=( [rak4631]="raknrf:nrf52:Wis
 ...
 # install the zero, esp8266, and adafruit board packages
 echo -n "ADD PACKAGE INDEX: "
-DEPENDENCY_OUTPUT=$(arduino --pref "boardsmanager.additional.urls=https://downloads.rakwireless.com/Arduino/BSP/package_raknrf_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json" --save-prefs 2>&1)
+DEPENDENCY_OUTPUT=$(arduino --pref "boardsmanager.additional.urls=https://raw.githubusercontent.com/RAKWireless/RAKwireless-Arduino-BSP-Index/main/package_rakwireless_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json" --save-prefs 2>&1)
+
 ...
 INSTALL_NRF52=$([[ $INSTALL_PLATFORMS == *"raknrf"* || -z "$INSTALL_PLATFORMS" ]] && echo 1 || echo 0)
 ...
@@ -97,7 +99,8 @@ build dir: /home/runner/work/WisBlock/WisBlock
 ########################################
 INSTALLING ARDUINO BOARDS
 ########################################
-arduino-cli core update-index --additional-urls https://downloads.rakwireless.com/Arduino/BSP/package_raknrf_index.json,https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json,https://sandeepmistry.github.io/arduino-nRF5/package_nRF5_boards_index.json > /dev/null
+arduino-cli core update-index --additional-urls https://raw.githubusercontent.com/RAKWireless/RAKwireless-Arduino-BSP-Index/main/package_rakwireless_index.json,https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json,https://sandeepmistry.github.io/arduino-nRF5/package_nRF5_boards_index.json > /dev/null
+
 
 No library dep or properties found!
 Libraries installed:  ['/home/runner/Arduino/libraries/SX126x-Arduino', '/home/runner/Arduino/libraries/ClosedCube_OPT3001_Arduino', '/home/runner/Arduino/libraries/Adafruit_Sensor', '/home/runner/Arduino/libraries/SparkFun_TMP102_Arduino_Library', '/home/runner/Arduino/libraries/Adafruit_Test_Library', '/home/runner/Arduino/libraries/ArduinoRS485', '/home/runner/Arduino/libraries/SparkFun_SGP30_Arduino_Library', '/home/runner/Arduino/libraries/nRF52_OLED', '/home/runner/Arduino/libraries/Adafruit_TCS34725', '/home/runner/Arduino/libraries/ArduinoModbus', '/home/runner/Arduino/libraries/BSEC-Arduino-library', '/home/runner/Arduino/libraries/U8g2', '/home/runner/Arduino/libraries/SparkFun_LIS3DH_Arduino_Library', '/home/runner/Arduino/libraries/SparkFun_SHTC3_Arduino_Library', '/home/runner/Arduino/libraries/Adafruit_BME680', '/home/runner/Arduino/libraries/Arduino_LPS22HB']
