@@ -104,7 +104,7 @@ ALL_PLATFORMS={
     "main_platforms" : ("uno", "leonardo", "mega2560", "zero",
                         "esp8266", "esp32", "metro_m4"),
     "arcada_platforms" : ("pybadge", "pygamer", "hallowing_m4",
-                          "cpb", "cpx_ada")
+                          "cpb", "cpx_ada"),
     "rak_platforms" : ("rak4631", "rak11200", "rak11300")
 }
 
