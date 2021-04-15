@@ -38,6 +38,11 @@ if "RAK-ESP32-Arduino" in BUILD_DIR:
     print("Found ESP32 BSP")
     IS_ESP_BSP = True
 
+IS_RP2040_BSP = False
+if "RAK-RP2040-Arduino" in BUILD_DIR:
+    print("Found RP2040 BSP")
+    IS_RP2040_BSP = True
+
 #os.system('pwd')
 #os.system('ls -lA')
 
@@ -92,6 +97,7 @@ ALL_PLATFORMS={
     "nrf52840" : "adafruit:nrf52:feather52840:softdevice=s140v6,debug=l0",
     "rak4631" : "rakwireless:nrf52:WisCoreRAK4631Board:softdevice=s140v6,debug=l0",
     "rak11200" : "rakwireless:esp32:WisCore_RAK11200_Board",
+    "rak11300" : "rakwireless:rp2040:WisCore_RAK11300_Board",
     "cpb" : "adafruit:nrf52:cplaynrf52840:softdevice=s140v6,debug=l0",
     "clue" : "adafruit:nrf52:cluenrf52840:softdevice=s140v6,debug=l0",
     # groupings
@@ -99,6 +105,7 @@ ALL_PLATFORMS={
                         "esp8266", "esp32", "metro_m4"),
     "arcada_platforms" : ("pybadge", "pygamer", "hallowing_m4",
                           "cpb", "cpx_ada")
+    "rak_platforms" : ("rak4631", "rak11200", "rak11300")
 }
 
 # BSP_URLS = "https://downloads.rakwireless.com/Arduino/BSP/package_raknrf_index.json,https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json,https://sandeepmistry.github.io/arduino-nRF5/package_nRF5_boards_index.json"
@@ -284,6 +291,8 @@ for platform in platforms:
         if IS_NRF_BSP:
             test_examples_in_folder(BUILD_DIR+"/libraries/RAK_examples/examples")
         elif IS_ESP_BSP:
+            test_examples_in_folder(BUILD_DIR+"/libraries/RAK_examples/examples")
+        elif IS_RP2040_BSP:
             test_examples_in_folder(BUILD_DIR+"/libraries/RAK_examples/examples")
         else:
             test_examples_in_folder(BUILD_DIR+"/examples")
