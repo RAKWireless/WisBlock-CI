@@ -27,6 +27,8 @@ export IO_PLATFORMS='declare -A io_platforms=( [zero]="arduino:samd:arduino_zero
 
 export NRF5X_PLATFORMS='declare -A nrf5x_platforms=( [rak4631]="raknrf:nrf52:WisCoreRAK4631Board:softdevice=s140v6,debug=l0")'
 
+export RP2040_PLATFORMS='declare -A rp2040_platforms=( [rak11300]="rakrp:mbed_rp2040:WisBlock_RAK11300_Board")'
+
 # make display available for arduino CLI
 /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16
 sleep 3
@@ -107,6 +109,7 @@ INSTALL_ESP8266=$([[ $INSTALL_PLATFORMS == *"esp8266"* || -z "$INSTALL_PLATFORMS
 INSTALL_AVR=$([[ $INSTALL_PLATFORMS == *"avr"* || -z "$INSTALL_PLATFORMS" ]] && echo 1 || echo 0)
 INSTALL_SAMD=$([[ $INSTALL_PLATFORMS == *"samd"* || -z "$INSTALL_PLATFORMS" ]] && echo 1 || echo 0)
 INSTALL_NRF52=$([[ $INSTALL_PLATFORMS == *"raknrf"* || -z "$INSTALL_PLATFORMS" ]] && echo 1 || echo 0)
+INSTALL_RP=$([[ $INSTALL_PLATFORMS == *"rakrp"* || -z "$INSTALL_PLATFORMS" ]] && echo 1 || echo 0)
 
 if [[ $INSTALL_ESP32 == 1 ]]; then
   echo -n "ESP32: "
@@ -147,6 +150,12 @@ if [[ $INSTALL_NRF52 == 1 ]]; then
   sudo pip3 install adafruit-nrfutil
   sudo pip3 install pyserial
   DEPENDENCY_OUTPUT=$(arduino --install-boards raknrf:nrf52 2>&1)
+  if [ $? -ne 0 ]; then echo -e "\xe2\x9c\x96 OR CACHED"; else echo -e """$GREEN""\xe2\x9c\x93"; fi
+fi
+
+if [[ $INSTALL_RP == 1 ]]; then
+  echo -n "RAK RP WisBlock: "
+  DEPENDENCY_OUTPUT=$(arduino --install-boards rakrp:mbed_rp2040 2>&1)
   if [ $? -ne 0 ]; then echo -e "\xe2\x9c\x96 OR CACHED"; else echo -e """$GREEN""\xe2\x9c\x93"; fi
 fi
 
