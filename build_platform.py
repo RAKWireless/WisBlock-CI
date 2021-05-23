@@ -97,7 +97,7 @@ ALL_PLATFORMS={
     "nrf52840" : "adafruit:nrf52:feather52840:softdevice=s140v6,debug=l0",
     "rak4631" : "rakwireless:nrf52:WisCoreRAK4631Board:softdevice=s140v6,debug=l0",
     "rak11200" : "rakwireless:esp32:WisCore_RAK11200_Board",
-    "rak11300" : "rakrp:mbed_rp2040:WisBlock_RAK11300_Board",
+    "rak11300" : "rakrp:mbed_rp2040:WisCoreRAK11300Board",
     "cpb" : "adafruit:nrf52:cplaynrf52840:softdevice=s140v6,debug=l0",
     "clue" : "adafruit:nrf52:cluenrf52840:softdevice=s140v6,debug=l0",
     # groupings
@@ -105,7 +105,7 @@ ALL_PLATFORMS={
                         "esp8266", "esp32", "metro_m4"),
     "arcada_platforms" : ("pybadge", "pygamer", "hallowing_m4",
                           "cpb", "cpx_ada"),
-    "rak_platforms" : ("rak4631", "rak11200"),
+    "rak_platforms" : ("rak4631", "rak11200", "rak11300"),
     "rak_platforms-test" : ("rak4631", "rak11200", "rak11300")
 }
 
