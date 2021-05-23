@@ -193,6 +193,7 @@ function build_platform()
   eval $ARCADA_PLATFORMS
   eval $IO_PLATFORMS
   eval $NRF5X_PLATFORMS
+  eval $RP2040_PLATFORMS
 
   # reset platform json var
   PLATFORM_JSON=""
@@ -242,6 +243,8 @@ function build_platform()
     platform=${io_platforms[$platform_key]}
   elif [[ ${nrf5x_platforms[$platform_key]} ]]; then
     platform=${nrf5x_platforms[$platform_key]}
+  elif [[ ${rp_platforms[$platform_key]} ]]; then
+    platform=${rp_platforms[$platform_key]}
   else
     echo "NON-STANDARD PLATFORM KEY: $platform_key"
     platform=$platform_key
