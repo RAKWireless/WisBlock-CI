@@ -27,7 +27,7 @@ export IO_PLATFORMS='declare -A io_platforms=( [zero]="arduino:samd:arduino_zero
 
 export NRF5X_PLATFORMS='declare -A nrf5x_platforms=( [rak4631]="raknrf:nrf52:WisCoreRAK4631Board:softdevice=s140v6,debug=l0")'
 
-export RP2040_PLATFORMS='declare -A rp2040_platforms=( [rak11300]="rakrp:mbed_rp2040:WisBlock_RAK11300_Board")'
+export RP2040_PLATFORMS='declare -A rp2040_platforms=( [rak11300]="rakrp:mbed_rp2040:WisCoreRAK11300Board")'
 
 # make display available for arduino CLI
 /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16
