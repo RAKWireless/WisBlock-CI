@@ -94,7 +94,7 @@ grep "depends=" $HOME/arduino_ide/libraries/Adafruit_Test_Library/library.proper
 # install the zero, esp8266, and adafruit board packages
 echo -n "ADD PACKAGE INDEX: "
 # DEPENDENCY_OUTPUT=$(arduino --pref "boardsmanager.additional.urls=https://downloads.rakwireless.com/Arduino/BSP/package_raknrf_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json" --save-prefs 2>&1)
-DEPENDENCY_OUTPUT=$(arduino --pref "boardsmanager.additional.urls=https://raw.githubusercontent.com/RAKWireless/RAKwireless-Arduino-BSP-Index/main/package_rakwireless_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json" --save-prefs 2>&1)
+DEPENDENCY_OUTPUT=$(arduino --pref "boardsmanager.additional.urls=https://raw.githubusercontent.com/RAKWireless/RAKwireless-Arduino-BSP-Index/main/package_rakwireless_index.json,https://raw.githubusercontent.com/RAKWireless/RAK-RP-Arduino/main/package_rakrp_index.json,http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json" --save-prefs 2>&1)
 if [ $? -ne 0 ]; then echo -e """$RED""\xe2\x9c\x96"; else echo -e """$GREEN""\xe2\x9c\x93"; fi
 
 # This is a hack, we have to install by hand so lets delete it
